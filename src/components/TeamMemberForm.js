@@ -23,39 +23,34 @@ const TeamMemberForm = props => {
   };
 
   return (
-    // form tags have an associated state with all the data
-    // from tags inside of that form tag
-    <div>
+    <div className="container">
       <form onSubmit={submitHandler}>
-        <h1>{teamMember.name}</h1>
-        <label htmlFor="name">Name</label>
+      <label htmlFor="name">Name</label>
         <input
           onChange={handleChanges}
           id="name"
           type="text"
           name="name"
+          placeholder="Member name.."
           value={teamMember.name}
         />
-
         <label htmlFor="email">Email</label>
         <input
           onChange={handleChanges}
           id="email"
           type="text"
           name="email"
+          placeholder="Member email.."
           value={teamMember.email}
         />
-
         <label htmlFor="role">Role</label>
         <select onChange={handleChanges} id="role" name="role">
-            <option value="1">Backend Engineer</option>
-            <option value="2">Frontend Engineer</option>
-            <option value="3">Designer</option>
+          <option value="">Select Role</option>
+          <option value="Backend Engineer">Backend Engineer</option>
+          <option value="Frontend Engineer">Frontend Engineer</option>
+          <option value="Designer">Designer</option>
         </select>
-
-        <button name="submitButton" type="submit">
-          Submit
-        </button>
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

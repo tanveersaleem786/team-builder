@@ -1,16 +1,11 @@
 import React, {useState} from 'react';
+import TeamMembers from "./components/TeamMembers";
 import TeamMemberForm from "./components/TeamMemberForm";
-import './App.css';
+import './App.css' ;
 
 function App() {
 
-  const [teamMembers, setTeamMembers] = useState([
-    { 
-      name: '', 
-      email: '', 
-      role: ''
-    }
-  ]);
+  const [teamMembers, setTeamMembers] = useState([]);
 
   const addNewTeamMember = teamMember => {
     setTeamMembers([...teamMembers, teamMember]);
@@ -18,8 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Team Members</h1>
+      <h1>Add Team Member</h1>
       <TeamMemberForm addNewTeamMember={addNewTeamMember} />
+      <TeamMembers teamMembers={teamMembers} />
     </div>
   );
 }
